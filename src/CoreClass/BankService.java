@@ -20,12 +20,27 @@ public class BankService {
         return customerAccount.get("customerName")+" Deposited "+amount;
     }
     public int withdraw(int amount) {
-        return amount;
+        balance-=amount;//this will be from account class
+    return amount;
     }
 
-    public int transfer(String fromCustomerName, String toCustomerName, int amount) {
+    public int transfer(BankService fromCustomerName,BankService toCustomerName, int amount) {
+
+        fromCustomerName.withdraw(amount);
+        toCustomerName.deposit(amount);
         CheckingAccount accountCheck=new CheckingAccount();
+
         return accountCheck.getBalance();
+    }
+
+    public List customerDetails()
+    {
+        List<String> list=new ArrayList<>();
+        list.add(customerAccount.get("customerName"));
+        list.add(customerAccount.get("customerAddress"));
+        list.add(customerAccount.get("customerAge"));
+        list.add(customerAccount.get("accountType"));
+        return list;
     }
 
 

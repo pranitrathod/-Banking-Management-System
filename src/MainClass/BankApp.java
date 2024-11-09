@@ -5,6 +5,9 @@ import CoreClass.BankService;
 import CoreClass.CheckingAccount;
 import CoreClass.SavingsAccount;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BankApp {
     public static void main(String[] args) {
         Account acc1=new SavingsAccount();
@@ -22,7 +25,19 @@ public class BankApp {
         BankService bs2=new BankService();
         bs2.createAccount("Piyu Rathod","Tirupati Supreme Enclaves",30,"saving");
         System.out.println(bs2.deposit(1000));
+
+        List<List<String>> customerDetails =new ArrayList<List<String>>();
+        customerDetails.add(bs.customerDetails());
+        customerDetails.add(bs2.customerDetails());
+
+
+        for (List<String> st:customerDetails) {
+            System.out.println(st);
+        }
     }
-
-
 }
+
+
+//Bank Service will give us Account details
+//Withdraw,Deposits
+//Transfer
