@@ -7,7 +7,7 @@ public class Account {
     String accountType;
     final int minBalance=1000;
 
-    public int depositAmount(int amount)
+    public int depositAmount(BankService bs,int amount)
     {
         balance+=amount;
         return balance;
