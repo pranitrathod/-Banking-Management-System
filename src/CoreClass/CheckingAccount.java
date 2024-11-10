@@ -8,11 +8,11 @@ public class CheckingAccount extends Account{
 //    {
 //        return 1500;
 //    }
-@Override
-public int depositAmount(int amount)
-{   super.depositAmount(amount);
-    return amount;
-}
+//@Override
+//public int depositAmount(int amount)
+//{   super.depositAmount(amount);
+//    return amount;
+//}
 @Override
     public int checkBalance()
 {

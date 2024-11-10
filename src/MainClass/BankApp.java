@@ -30,17 +30,13 @@ public class BankApp {
         customerDetails.add(bs.customerDetails());//customer1 Data
         customerDetails.add(bs2.customerDetails());//customer2 Data
 
-//        bs.withdraw(bs,500) ;
         for (List<String> st:customerDetails) {
             System.out.println(st);
         }
         System.out.println(bs.withdraw(bs,500));
         System.out.println(bs2.withdraw(bs2,1500));
     }
-
 }
-
-
 //Bank Service will give us Account details
 //Withdraw,Deposits
 //Transfer

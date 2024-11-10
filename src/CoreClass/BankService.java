@@ -21,15 +21,8 @@ public class BankService {
         return customerAccount.get("customerName")+" Deposited "+amount;
     }
     public String withdraw(BankService account,int amount) {
-        //this will be from account class
-        int currentBalance = Integer.parseInt(account.customerAccount.get("Balance"));
-        if(currentBalance>amount){
-        int leftBalance=Integer.parseInt(account.customerAccount.get("Balance"))-amount;
-        if(leftBalance<currentBalance){
-            account.customerAccount.put("Balance",String.valueOf(leftBalance));
-            return "Customer "+ account.customerAccount.get("customerName")+" Balance Left "+String.valueOf(leftBalance);
-        }}
-        return "Insufficient Balance for this customer";
+        Account acc=new Account();
+        return  acc.getWithdraw(account,amount);
     }
 
     public int transfer(BankService fromCustomerName,BankService toCustomerName, int amount) {

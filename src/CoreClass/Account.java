@@ -12,8 +12,15 @@ public class Account {
         balance+=amount;
         return balance;
     }
-    int getWithdraw(){
-        return 0;
+    String getWithdraw(BankService custDetails,int amount){
+        int currentBalance = Integer.parseInt(custDetails.customerAccount.get("Balance"));
+        if(currentBalance>amount){
+            int leftBalance=Integer.parseInt(custDetails.customerAccount.get("Balance"))-amount;
+            if(leftBalance<currentBalance){
+                custDetails.customerAccount.put("Balance",String.valueOf(leftBalance));
+                return "Customer "+ custDetails.customerAccount.get("customerName")+" Balance Left "+String.valueOf(leftBalance);
+            }}
+        return "Insufficient Balance for this customer";
     }
     public int getBalance(){
         return balance;
